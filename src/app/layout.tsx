@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { HypeProvider } from "@/context/HypeContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Henry Bestritsky | AI Strategy & Implementation",
-  description: "The Digital Trust Engine. Stop asking 'What AI Tool?' and start asking 'How much can I trust?'. Battle-tested AI strategy for executives.",
+  description: "95% of enterprise AI projects fail. I help executives, MSPs, and PE firms implement AI that actually works. Former CEO of Binary Tree (acquired by Quest). Fractional CAO, AI Readiness Assessments, and Rescue Operations.",
 };
 
 export default function RootLayout({
@@ -29,14 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased selection:bg-photon-blue/30 selection:text-photon-blue`}
       >
         <div className="noise-overlay" />
-        <HypeProvider>
-          {children}
-        </HypeProvider>
+        {children}
       </body>
     </html>
   );
